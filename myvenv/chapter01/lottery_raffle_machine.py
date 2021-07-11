@@ -1,0 +1,26 @@
+# Lottery raffle machine
+# 로또 복권추첨기 만들어보기
+
+# 1. 로또 번호 6개를 생성합니다.
+# 2. 로또 번호는 1~45 까지의 랜덤 번호입니다.
+# 3. 6개의 숫자 모두 달라야 합니다.
+
+import random 
+
+def getRandomNumber():
+    number = random.randint(1, 45)
+    return number
+
+
+def lotto_number_maker():
+    lotto_number_list = []
+    while True:
+        if len(lotto_number_list) != 6:
+            lotto_number_list.append(getRandomNumber())
+        else:
+            break
+    lotto_number_list.sort()
+    for number in lotto_number_list:
+        print(number, end=' ')
+
+lotto_number_maker()
