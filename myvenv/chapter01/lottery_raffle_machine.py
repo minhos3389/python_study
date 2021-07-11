@@ -16,10 +16,13 @@ def lotto_number_maker():
     lotto_number_list = []
     while True:
         if len(lotto_number_list) != 6:
-            lotto_number_list.append(getRandomNumber())
+            num = getRandomNumber()
+            # lotto don't allow duplication (로또번호는 중복을 허용하지 않습니다.)
+            if num not in lotto_number_list:
+                lotto_number_list.append(num)
         else:
             break
-    lotto_number_list.sort()
+    # lotto_number_list.sort() lotto don't need to do sorting. (로또 번호는 오름차순 정렬할 필요가 없습니다.)
     for number in lotto_number_list:
         print(number, end=' ')
 
